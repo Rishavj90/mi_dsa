@@ -23,3 +23,4 @@
 #include <memory.h>
 #include <cassert>
 #include <unordered_set>
+#include <stdexcept>
