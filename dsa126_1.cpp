@@ -7,9 +7,7 @@ void make_subset(vector<vector<int>>& vec, vector<int>& nums,int i){
     }
     vector<int>curr;
     for(int j = 0; j < nums.size(); ++j){
-        int n = 1 << j;
-        int k = i & n;
-        if(k == n){
+        if((i & (1 << j)) == (1 << j)){
             curr.push_back(nums[j]);
         }
     }
