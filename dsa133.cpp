@@ -13,7 +13,10 @@ void make_string(vector<string>&vec,string &curr,unordered_map<char,vector<char>
         curr.pop_back();
     }
 }
-
+/* takes far less space :)
+string mapping[10] = {"",    "",    "abc",  "def", "ghi",
+                     "jkl", "mno", "pqrs", "tuv", "wxyz"};
+*/
 void keypad_func(unordered_map<char,vector<char>>&keypad){
     char j = '2';
     int i = 0;
