@@ -1,4 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int numberOfSubstrings(string s) {}
+ 
+
+int main(){
+    string s = "abcabc";
+    cout << numberOfSubstrings(s);
+    return 0;
+}
