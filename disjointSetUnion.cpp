@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//by rank
+//by size
 class disjointSetUnion{
-    vector<int>rank, parent;
+    vector<int>size, parent;
     public:
     disjointSetUnion(int n){
-        rank.resize(n+1,0);
+        size.resize(n+1,1);
         parent.resize(n+1);
         for(int i = 0; i< parent.size(); i++)parent[i]=i;
     }
@@ -17,23 +17,22 @@ class disjointSetUnion{
     }
 
     void unionSet(int a, int b){
-        //check rank of their parents
-        //update rank of their parents
+        //check size of their parents
+        //update size of their parents 
         //compress their path
 
-        int par_a = parent[a];
-        int par_b = parent[b];
+        int par_a = pathCompress(a);
+        int par_b = pathCompress(b);
 
-        if(rank[par_a] < rank[par_b]){
-            rank[par_b]++;
-            parent[par_a] = parent[par_b];
-            pathCompress(par_a);
+        if(par_a == par_b)return;
+
+        if(size[par_a] < size[par_b]){
+            parent[par_a] = par_b;
+            size[par_b]+= size[par_a];
         }else{
-            rank[par_a]++;
-            parent[par_b] = parent[par_a];
-            pathCompress(par_b);
+            parent[par_b] = par_a;
+            size[par_a]+= size[par_b];  
         }
-        return;
     }
 };
 
