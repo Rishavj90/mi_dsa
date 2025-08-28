@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
+void recSol(TreeNode* root, vector<int>&ans){
+    //get root node
+    if(root != nullptr)ans.push_back(root->val);
+
+    //get left node
+    if(root != nullptr && root->left != nullptr)recSol(root->left, ans);
+
+    //get right node
+    if(root != nullptr && root->right != nullptr)recSol(root->right, ans);
+}
+
+vector<int> preorderTraversal(TreeNode* root) {
+    vector<int>ans;
+    recSol(root, ans);
+    return ans;
+}
