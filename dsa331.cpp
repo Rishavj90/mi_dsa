@@ -20,8 +20,7 @@ int minPathSum(vector<vector<int>>& grid) {
             int left=INT_MAX;
             if(j!=0)left= tmp[j-1];
             
-            if(up==INT_MAX && left==INT_MAX)tmp[j]=grid[i][j];
-            else tmp[j]=grid[i][j]+ min(up, left);
+            tmp[j]=grid[i][j]+ min(up, left);
         }
         dp=tmp;
     }
