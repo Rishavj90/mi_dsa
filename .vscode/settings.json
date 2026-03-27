@@ -95,12 +95,5 @@
         "text_encoding": "cpp",
         "variant": "cpp"
     },
-    "C_Cpp.default.compilerPath": "/usr/bin/g++",
-    "zenMode.hideActivityBar": true,
-    "workbench.activityBar.location": "default",
-    "workbench.activityBar.iconClickBehavior": "toggle",
-    "workbench.activityBar.compact": true,
-    "workbench.activityBar.autoHide": true,
-    "workbench.secondarySideBar.forceMaximized": false,
-    "workbench.editor.openSideBySideDirection": "right"
+    "C_Cpp.default.compilerPath": "/usr/bin/g++"
 }
